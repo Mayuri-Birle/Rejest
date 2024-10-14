@@ -24,3 +24,17 @@ test('Check Button',()=>{
   expect(button).toHaveAttribute('type', 'submit');
 })
 
+describe.skip("Group allabove test cases", ()=>{
+  test("Name Filed", ()=>{
+    render(<App />);
+    let name = screen.getByRole("textbox");
+    expect(name).toBeInTheDocument();
+    expect(name).toHaveAttribute("name", "username")
+  })
+
+  test("Password Field", ()=>{
+    render(<App />)
+    let password = screen.getByPlaceholderText("Enter password");
+    expect(password).toBeInTheDocument()
+  })
+})
