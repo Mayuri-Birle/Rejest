@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('Test Form Name', ()=>{
+test('Testing Form Name', ()=>{
   render(<App />);
   let text = screen.getByRole('textbox')
 
@@ -10,8 +10,17 @@ test('Test Form Name', ()=>{
 
 })
 
-test('Test Password Field',()=>{
-  let password = screen.getByRole('password')
+test('Password Field',()=>{
+  render(<App />);
+  let password = screen.getByPlaceholderText('Enter password')
   expect(password).toBeInTheDocument();
   expect(password).toHaveAttribute('name', 'password');
 })
+
+test('Check Button',()=>{
+  render(<App />);
+  let button = screen.getByRole('button')
+  expect(button).toBeInTheDocument();
+  expect(button).toHaveAttribute('type', 'submit');
+})
+
