@@ -14,6 +14,10 @@ function App() {
         <input type="password" name="password" placeholder='Enter password'/>
         <br />
         <br />
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword" placeholder='Confirm password'/>
+        <br />
+        <br />
         <button type="submit">Submit</button>
       </form>
     </div>
